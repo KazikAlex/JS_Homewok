@@ -24,7 +24,7 @@ function Animal(name) {
         return foodAmount + ' гр.';
     }
 
-    self.animalFeed = function() {
+    self.feed = function() {
         console.log('Насыпаем в миску ' + self.dailyNorm() + ' корма');
     };
 }
@@ -36,10 +36,10 @@ function Cat(name) {
         console.log('Кот доволен ^_^');
     };
 
-    var catFeed = this.animalFeed;
+    var animalFeed = this.feed;
 
-    this.animalFeed = function() {
-        catFeed.call(this);
+    this.feed = function() {
+        animalFeed.call(this);
         this.satisfied();
         return this;
     };
