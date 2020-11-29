@@ -1,7 +1,7 @@
 // Задание №1
 
 function Animal() {
-    this._foodAmount = 0;
+    this._foodAmount = 60;
 }
 
 Animal.prototype.dailyNorm = function(norma) {
@@ -9,16 +9,16 @@ Animal.prototype.dailyNorm = function(norma) {
 
     if ( norma < 50 ) {
         throw new Error("Не жмись, дай коту больше!!!");
-      }
-      if ( norma > 500 ) {
+    }
+    if ( norma > 500 ) {
         throw new Error("Ты чего мне жирдяя ростишь!? Столько давать нельзя! ");
-      }
+    }
 
-      _foodAmount = norma;
+      this._foodAmount = norma;
 };
 
 Animal.prototype._formatFoodAmount = function() {
-    return _foodAmount + ' гр.';
+    return this._foodAmount + ' гр.';
 };
 
 Animal.prototype.feed = function() {
@@ -26,6 +26,7 @@ Animal.prototype.feed = function() {
 };
 
 function Cat(name) {
+    Animal.apply(this, arguments);
     this.name = name;  
 }
 
@@ -45,7 +46,7 @@ Cat.prototype.stroke = function() {
 
 var barsik = new Cat('Барсик');
 
-barsik.dailyNorm(55);
+barsik.dailyNorm();
 console.log( barsik.dailyNorm() );
 console.log( barsik.feed() );
 console.log( barsik.stroke().feed() );
@@ -56,7 +57,6 @@ console.log( barsik.name );
 
 
 // Задание №2
-
 
 var initialObj = {
     string: 'Vasya',
@@ -73,30 +73,29 @@ var initialObj = {
         object3: {}
     },
     method: function() {
-        alert('Hello');
+        console.log('Hello');
     }
 };
 
-function deepClone( typeItem, clone) {
-    var cloneInner = {};
-    for ( key in clone ) {
-        // console.log(typeof(clone[key]));
-        if ( typeof(clone[key]) === "function" ) {
-            clone[key].toString();
-            clone[key].slice(1, length - 1);
-            cloneInner[key] = clone[key];
-            // deepClone(typeItem, clone);
+function deepClone(clone) {
 
-        }else if ( isArray(clone[key]) ) {
-            cloneInner = [];
-            cloneInner[key] = clone[key];
-        }else {
-            cloneInner[key] = clone[key];
+    if ( typeof(clone) === 'object' ) {
+        if ( clone === null ) {
+            return clone;
         }
 
+        var cloneIner = Array.isArray( clone ) ? [] : {};
+
+        for ( key in clone ) {
+            cloneIner[key] = deepClone(clone[key]);
+        }
+
+        return cloneIner;
+    }else {
+
+        return clone;
     }
 
-    return cloneInner;
 }
 
 var clonedObj = deepClone(initialObj);
@@ -105,6 +104,6 @@ clonedObj.array.push(2);
 console.log(initialObj);
 console.log(clonedObj);
 
-// console.log(initialObj.method());
-// console.log(clonedObj.method());
+// Задание №3
 
+Object.keys(initialObj).length
