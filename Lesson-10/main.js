@@ -1,6 +1,7 @@
 // Задание №1
 
-function Animal() {
+function Animal(name) {
+    this.name = name;
     this._foodAmount = 60;
 }
 
@@ -25,9 +26,9 @@ Animal.prototype.feed = function() {
     console.log('Насыпаем в миску ' + this.dailyNorm() + ' корма');
 };
 
-function Cat(name) {
+function Cat() {
     Animal.apply(this, arguments);
-    this.name = name;  
+      
 }
 
 Cat.prototype = Object.create(Animal.prototype);
@@ -145,12 +146,12 @@ var compareObj = {
     }
 };
 
-
 function compare(initialObj, compareObj) {
     var initialObjProp = 0, 
         compareObjProp = 0;
 
     if (initialObj === compareObj) {
+
         return true;
     }
  
@@ -158,6 +159,10 @@ function compare(initialObj, compareObj) {
     
         return false;
     }
+
+    if (initialObj.toString() != compareObj.toString()) {
+        return false;
+      }
     
     for (var prop in initialObj) {
         initialObjProp += 1;
@@ -172,135 +177,9 @@ function compare(initialObj, compareObj) {
     return initialObjProp == compareObjProp;
 }
 
-initialObj.object.object2.array2[1].name = 'Vasya';
-initialObj.array.push(2);
+// initialObj.object.object2.array2[1].name = 'Vasya';
+// initialObj.array.push(2);
 
-compare(initialObj, compareObj);
+console.log(compare(initialObj, compareObj));
 console.log(initialObj);
 console.log(compareObj);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Задание 3: 
-var a = {
-    string: 'Vasya',
-    number: 30,
-    boolean: true,
-    undefined: undefined,
-    null: null,
-    array: [1, 2, 3],
-    object: {
-        string2: 'Petrov',
-        object2: {
-            array2: [{}, {}]
-        },
-        object3: {}
-    },
-    method: function() {
-        alert('Hello');
-    }
-};
-
-var b = {
-    string: 'Vasya',
-    number: 30,
-    boolean: true,
-    undefined: undefined,
-    null: null,
-    array: [1, 2, 3],
-    object: {
-        string2: 'Petrov',
-        object2: {
-            array2: [{}, {}]
-        },
-        object3: {}
-    },
-    method: function() {
-        alert('Hello');
-    }
-};
-
-
-function deepEqual(a, b) {
-    if (a === b) {
-        return true;
-    }
- 
-    if (a == null && typeof(a) != "object" && b == null && typeof(b) != "object") {
-    
-        return false;
-    }
- 
-    var propertiesA = 0, propertiesB = 0;
-    for (var property in a) {
-        propertiesA += 1;
-    }
-    for (var property in b) {
-        propertiesB += 1;
-        if (!(property in a) || !deepEqual(a[property], b[property])) {
-            return false;        
-        }
-    }        
-    return propertiesA == propertiesB;
-}
-
-// a.object.object2.array2[1].name = 'Vasya';
-//       a.array.push(2);
-
-
-console.log(deepEqual(a, b));
-console.log(a);
-console.log(b);
