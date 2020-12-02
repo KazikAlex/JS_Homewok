@@ -142,7 +142,7 @@ var compareObj = {
         object3: {}
     },
     method: function() {
-        alert('Hello');
+        alert('Hello w');
     }
 };
 
@@ -160,9 +160,12 @@ function compare(initialObj, compareObj) {
         return false;
     }
 
-    if (initialObj.toString() != compareObj.toString()) {
+
+
+    if (typeof(initialObj) === "function" && initialObj.toString() != compareObj.toString()) {
+    
         return false;
-      }
+    }
     
     for (var prop in initialObj) {
         initialObjProp += 1;
