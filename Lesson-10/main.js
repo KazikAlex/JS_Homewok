@@ -142,7 +142,7 @@ var compareObj = {
         object3: {}
     },
     method: function() {
-        alert('Hello w');
+        alert('Hello');
     }
 };
 
