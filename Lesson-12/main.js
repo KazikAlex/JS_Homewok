@@ -4,65 +4,53 @@ var nameArray = ['Вася', 'Петя', 'Маша'];
 
 function nameArrayObjects(arr) {
     var arrObjects = arr.map(function(name) {
-
-        return {name};
+        
+        return obj = {name: name};;
     });
 
     return arrObjects;
 
 };
 
-nameArrayObjects(nameArray);
+console.log(nameArrayObjects(nameArray));
 
 
 //Задача №2
 
-//"Текущее время : 00 : 13 : 24"
-
 var timeArray = ['00', '13', '24'];
 
 function realTime(arr) {
-    var time = arr.join(' : ');
+    convertTime = arr.reduce(function(previousValue, item) {
+        return previousValue + ' : ' + item;
+    }, 'Текущее время: '); 
 
-    return `"Текущее время : ${time}"`;
+    return convertTime;
 }
 
 console.log(realTime(timeArray));
 
 
-
 //Задача №3 
 
-//вариант 1
-function vowelCounter() {
-    var str = prompt('Введите строку на русском языке:');
+var enterString = 'Введите строку на русском языке:';
+
+function vowelCounter(strEnt) {
+    var str = strEnt.split('');
+    var vovel = "аоиеёэыуюя".split('');
     var counter = 0;
 
-    strArr = str.split('');
-
-    for(var key of strArr) {
-        if ("аоиеёэыуюя".includes(key)) {
-            counter += 1;
-        }
-    } 
-
-    return counter;
-}
-
-alert(vowelCounter());
-
-//вариант 2
-function vowelCounter() {
-    var str = prompt('Введите строку на русском языке:');
-
-    var counter = str.split('').filter(function(item) {
-        return "аоиеёэыуюя".includes(item);
+    str.forEach(function(item) {
+        vovel.forEach(function(it) {
+            if (item == it) {
+                counter++;
+            }
+        });
     });
 
-    alert(counter.length);
+    return console.log('В этом предложении глассных ' + counter + ' шт.');
 }
 
-vowelCounter();
+vowelCounter(enterString);
 
 
 //Задача №4
@@ -73,7 +61,7 @@ function countSentencesLetters(text) {
     textPart.forEach(element => {
         if (element.split(/[,\s]/).join('').length > 0) {
             var a = element.split(/[,\s]/).join('').length;
-            console.log(`${element}: Letters quantity is: ${a}`);
+            console.log(element + ': ' + 'Letters quantity is: ' + a);
         }
     });
 }
@@ -118,7 +106,7 @@ function frequentWord(text) {
         }
     }
 
-    return console.log(`Максимальное число повторений у слова "${c[0].name}" - ${c[0].count}`)
+    return console.log('Максимальное число повторений у слова ' + '"' + c[0].name + '"' + ' - ' + c[0].count)
 
 }
 
