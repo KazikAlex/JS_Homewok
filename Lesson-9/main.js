@@ -39,7 +39,7 @@ function Cat(name) {
     var animalFeed = this.feed;
 
     this.feed = function() {
-        animalFeed.call(this);
+        animalFeed();
         this.satisfied();
         return this;
     };
@@ -53,11 +53,11 @@ function Cat(name) {
 
 var barsik = new Cat('Барсик');
 barsik.dailyNorm(55);
-// console.log( barsik.dailyNorm() );
-// console.log( barsik.animalFeed() );
+console.log( barsik.dailyNorm() );
+console.log( barsik.feed() );
 
-console.log( barsik.stroke().animalFeed() );
+console.log( barsik.stroke().feed() );
 barsik.dailyNorm(455);
-console.log( barsik.animalFeed().stroke() );
-console.log( barsik.animalFeed().stroke().dailyNorm() );
+console.log( barsik.feed().stroke() );
+console.log( barsik.feed().stroke().dailyNorm() );
 console.log( barsik.name );

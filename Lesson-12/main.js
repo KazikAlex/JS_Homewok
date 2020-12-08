@@ -5,7 +5,7 @@ var nameArray = ['Вася', 'Петя', 'Маша'];
 function nameArrayObjects(arr) {
     var arrObjects = arr.map(function(name) {
         
-        return obj = {name: name};;
+        return {name: name};
     });
 
     return arrObjects;
@@ -106,7 +106,7 @@ function frequentWord(text) {
         }
     }
 
-    return console.log('Максимальное число повторений у слова ' + '"' + c[0].name + '"' + ' - ' + c[0].count)
+    return console.log('Максимальное число повторений у слова ' + '"' + c[0].name + '"' + ' - ' + c[0].count);
 
 }
 

@@ -10,14 +10,15 @@ tbody.addEventListener('click', function(event) {
         tbody.insertBefore(trTag, insertChild);
     }else {
         var activeTr = event.target;
-        
         activeTr.innerHTML = '<input>';
+
         var input = activeTr.getElementsByTagName('input')[0];
-            input.keyup(function(event) {
+            input.keypress(function(event) {
                 if(event.keyCode == 13) {
                     event.preventDefault();
                 }
             });
+
         console.log(input);
         
     }
