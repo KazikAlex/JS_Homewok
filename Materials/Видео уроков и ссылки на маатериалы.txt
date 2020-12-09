@@ -1,0 +1,54 @@
+Материалы:
+http://fe.it-academy.by/Materials/JSE_V17/JavaScript__Contents.html
+
+Слайды:
+http://fe.it-academy.by/ViewSlidesContents.php?lect=70
+
+Техгнология БЭМ
+https://ru.bem.info/methodology/quick-start/
+
+https://www.youtube.com/watch?v=HihYQVuH64U&ab_channel=%D0%A4%D1%80%D0%B8%D0%BB%D0%B0%D0%BD%D1%81%D0%B5%D1%80%D0%BF%D0%BE%D0%B6%D0%B8%D0%B7%D0%BD%D0%B8-IT%D0%B8%D1%84%D1%80%D0%B8%D0%BB%D0%B0%D0%BD%D1%81
+
+https://www.youtube.com/watch?v=iNPE0zGucTo&t=3006s&ab_channel=WebDesignMaster
+
+Регулярные выражения
+https://metanit.com/web/javascript/6.4.php
+
+1 Лекция 13.10.20
+https://www.youtube.com/watch?v=WEEIh_DE3PU&feature=youtu.be&ab_channel=ITAcademyWebinar
+
+2 Лекция 15.10.20
+https://www.youtube.com/watch?v=dAUh9UPl5RA&feature=youtu.be&ab_channel=ITAcademyWebinar
+
+3 Лекция 22.10.20
+https://www.youtube.com/watch?v=5PlaXMFG0tE&feature=youtu.be&ab_channel=ITAcademyWebinar
+
+4 Лекция 27.10.20
+https://www.youtube.com/watch?v=je12l2GHYu0&feature=youtu.be&ab_channel=ITAcademyWebinar
+
+5 Лекция 29.10.20
+https://www.youtube.com/watch?v=Q73HHDGEo9I&feature=youtu.be&ab_channel=ITAcademyWebinar
+
+6 Лекция 03.11.20
+https://www.youtube.com/watch?v=NVTHFtwZOBk&feature=youtu.be&ab_channel=ITAcademyWebinar
+
+7 Лекция 05.11.20
+https://www.youtube.com/watch?v=nsLtM48gU0s&feature=youtu.be&ab_channel=ITAcademyWebinar
+
+8 Лекция 10.11.20
+https://www.youtube.com/watch?v=54UxHj_DLu4&feature=youtu.be
+
+9 Лекция 17.11.20
+https://www.youtube.com/watch?v=ZL6qrTmtIvY&feature=youtu.be
+
+10 Лекция 20.11.20 очная
+https://www.youtube.com/watch?v=9ZnBLb_zqnQ&feature=youtu.be
+
+11 Лекция 24.11.20
+https://www.youtube.com/watch?v=DqInQwFkluE&feature=youtu.be
+
+12 Лекция 01.12.20
+https://www.youtube.com/watch?v=eScLoNaFxL4&feature=youtu.be
+
+13 Лекция 03.12.20
+https://www.youtube.com/watch?v=WUsUVzZWwQg&feature=youtu.be
