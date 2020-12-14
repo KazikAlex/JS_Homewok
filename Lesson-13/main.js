@@ -50,5 +50,4 @@ tbody.addEventListener('click', function(event) {
         }
         
     }
-
 });

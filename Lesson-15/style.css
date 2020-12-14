@@ -1,0 +1,14 @@
+div {
+    display: block;
+    font-weight: bold;
+}
+
+button {
+    margin-left: 20px;
+}
+
+#x, #y, #btn {
+    width: 100px;
+    height: 20px;
+    margin-bottom: 10px;
+}
