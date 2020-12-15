@@ -7,6 +7,21 @@ button {
     margin-left: 20px;
 }
 
+td {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000000;
+}
+
+table {
+    margin-top: 20px;
+    border-spacing: 0;
+}
+
+.black {
+    background-color: #000000;
+}
+
 #x, #y, #btn {
     width: 100px;
     height: 20px;
