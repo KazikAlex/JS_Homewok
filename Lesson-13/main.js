@@ -16,12 +16,12 @@ tbody.addEventListener('click', function(event) {
             activeTr.firstElementChild.focus();
             input = document.getElementsByTagName('input')[0];
 
-            input.addEventListener("focusout", function() {
+            input.addEventListener('focusout', function() {
                 activeTr.textContent = input.value;
                 input.blur();
             });
         
-            input.addEventListener("keydown", function(e) {
+            input.addEventListener('keydown', function(e) {
                 if (e.keyCode === 13) {
                     activeTr.inputContent = input.value;
                     input.blur();
@@ -36,12 +36,12 @@ tbody.addEventListener('click', function(event) {
             input.value += inputContent;
             activeTr.firstElementChild.focus();
 
-            input.addEventListener("focusout", function() {
+            input.addEventListener('focusout', function() {
                 activeTr.textContent = input.value;
                 input.blur();
             });
         
-            input.addEventListener("keydown", function(e) {
+            input.addEventListener('keydown', function(e) {
                 if (e.keyCode === 13) {
                     activeTr.inputContent = input.value;
                     input.blur();
