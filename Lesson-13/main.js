@@ -18,13 +18,13 @@ tbody.addEventListener('click', function(event) {
 
             input.addEventListener("focusout", function() {
                 activeTr.textContent = input.value;
-                input.remove();
+                input.blur();
             });
         
             input.addEventListener("keydown", function(e) {
                 if (e.keyCode === 13) {
                     activeTr.inputContent = input.value;
-                    input.remove();
+                    input.blur();
                 }
             });
 
@@ -38,13 +38,13 @@ tbody.addEventListener('click', function(event) {
 
             input.addEventListener("focusout", function() {
                 activeTr.textContent = input.value;
-                input.remove();
+                input.blur();
             });
         
             input.addEventListener("keydown", function(e) {
                 if (e.keyCode === 13) {
                     activeTr.inputContent = input.value;
-                    input.remove();
+                    input.blur();
                 }
             });
         }

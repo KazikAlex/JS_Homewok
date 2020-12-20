@@ -39,22 +39,20 @@ for(var i = 0; i < secondParLinks.length; i++) {
         event.preventDefault();
         var k = event.target.textContent;
         var val = event.target.getAttribute('href');
-    
-        if (!event.target.getElementsByTagName('a')[0]) {
-            if (event.target.getAttribute('href') !== '#') {
-                localStorage.setItem(k, JSON.stringify({path: val}));
-                event.target.setAttribute('href', '#');
-                alert('Ссылка была сохранена');
-            }else {
-                for (var i = 0; i < localStorage.length; i++) {
-                    if (k === localStorage.key(i)) {
-                        kStorage = localStorage.key(i);
-                        valStorage = JSON.parse(localStorage.getItem(localStorage.key(i))).path;
-                        alert(valStorage);
-                    }
+
+        if (event.target.getAttribute('href') !== '#') {
+            localStorage.setItem(k, JSON.stringify({path: val}));
+            event.target.setAttribute('href', '#');
+            alert('Ссылка была сохранена');
+        }else {
+            for (var i = 0; i < localStorage.length; i++) {
+                if (k === localStorage.key(i)) {
+                    kStorage = localStorage.key(i);
+                    valStorage = JSON.parse(localStorage.getItem(localStorage.key(i))).path;
+                    alert(valStorage);
                 }
-                
             }
+            
         }
     }, false);
 }
