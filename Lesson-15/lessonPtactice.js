@@ -1,9 +1,9 @@
 var container = document.getElementById('container'),
     firstPar = document.createElement('p'),
     secondPar = document.createElement('p'),
-    btn = document.getElementsByTagName('button')[0],
-    getA = firstPar.getElementsByTagName('a'),
-    getB = secondPar.getElementsByTagName('a');
+    btn = document.getElementsByTagName('button')[0];
+    // getA = firstPar.getElementsByTagName('a'),
+    // getB = secondPar.getElementsByTagName('a');
 
 localStorage.clear();
 
@@ -16,9 +16,16 @@ container.appendChild(secondPar);
 
 btn.addEventListener('click', function() {
 
-    for (var item of getA) {
-        item.style.color = 'red';
+    var arrLinkColor = firstPar.children;
+
+    for (var item of arrLinkColor) {
+        item.className = 'red';
     }
+
+    // for (var item of getA) {
+    //     item.style.color = 'red';
+    //     item.style.fontWeight = 'bold';
+    // }
     
 });
 
@@ -26,9 +33,15 @@ btn.onclick = secondParLinkGreen;
 
 function secondParLinkGreen() {
 
-    for (var item of getB) {
-        item.style.color = 'green';
+    var arrLinkColor = secondPar.children;
+
+    for (var item of arrLinkColor) {
+        item.className = 'green';
     }
+
+    // for (var item of getB) {
+    //     item.style.color = 'green';
+    // }
 
 };
 
@@ -54,4 +67,5 @@ secondPar.addEventListener('click', function(event) {
         }
     }
 }, false);
+
 

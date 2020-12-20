@@ -1,0 +1,20 @@
+
+
+
+
+
+        // for (var i = 0; i <= localStorage.length; i++) {
+        //     if (k === localStorage.key(i) || event.target.getAttribute('href') === '#') {
+        //         console.log(JSON.parse(localStorage.getItem(localStorage.key(i))).path);
+        //         console.log(localStorage.key(i));
+        //         alert(JSON.parse(localStorage.getItem(localStorage.key(i))).path);
+        //         return;
+        //     }else {
+        //         console.log(localStorage.key(i));
+        //         localStorage.setItem(k, JSON.stringify({path: val}));
+        //         event.target.setAttribute('href', '#');
+        //         alert('—сылка была сохранена');
+        //         return;
+                
+        //     }
+        // }

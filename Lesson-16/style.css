@@ -1,0 +1,50 @@
+body{
+    background-color: #000000;
+}
+
+.block {
+    position: relative;
+    width: 700px;
+    height: 250px;
+    margin: 40px auto;
+}
+
+.block_btn {
+    position: absolute;
+    width: 100px;
+    height: 35px;
+    top: -40px;
+    right: 0;
+    background-color: blueviolet;
+}
+
+.block_content {
+    position: relative;
+    margin-top: 50px;
+    
+}
+
+.block_content_tabs_item {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100px;
+    height: 40px;
+    background-color: green;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.block_content_item {
+    width: 700px;
+    height: 150px;
+    background-color: #ffffff;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.active {
+    color: #ffffff;
+    background-color: #ffffff;
+}
