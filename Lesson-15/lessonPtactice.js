@@ -1,9 +1,7 @@
 var container = document.getElementById('container'),
-    firstPar = document.createElement('p'),
-    secondPar = document.createElement('p'),
-    btn = document.getElementsByTagName('button')[0];
-    // getA = firstPar.getElementsByTagName('a'),
-    // getB = secondPar.getElementsByTagName('a');
+firstPar = document.createElement('p'),
+secondPar = document.createElement('p'),
+btn = document.getElementsByTagName('button')[0];
 
 localStorage.clear();
 
@@ -21,12 +19,6 @@ btn.addEventListener('click', function() {
     for (var item of arrLinkColor) {
         item.className = 'red';
     }
-
-    // for (var item of getA) {
-    //     item.style.color = 'red';
-    //     item.style.fontWeight = 'bold';
-    // }
-    
 });
 
 btn.onclick = secondParLinkGreen;
@@ -38,34 +30,31 @@ function secondParLinkGreen() {
     for (var item of arrLinkColor) {
         item.className = 'green';
     }
-
-    // for (var item of getB) {
-    //     item.style.color = 'green';
-    // }
-
 };
 
-secondPar.addEventListener('click', function(event) {
-    event.preventDefault();
-    var k = event.target.textContent;
-    var val = event.target.getAttribute('href');
+var secondParLinks = secondPar.getElementsByTagName('a');
 
-    if (!event.target.getElementsByTagName('a')[0]) {
-        if (event.target.getAttribute('href') !== '#') {
-            localStorage.setItem(k, JSON.stringify({path: val}));
-            event.target.setAttribute('href', '#');
-            alert('Ссылка была сохранена');
-        }else {
-            for (var i = 0; i < localStorage.length; i++) {
-                if (k === localStorage.key(i)) {
-                    kStorage = localStorage.key(i);
-                    valStorage = JSON.parse(localStorage.getItem(localStorage.key(i))).path;
-                    alert(valStorage);
+for(var i = 0; i < secondParLinks.length; i++) {
+    secondParLinks[i].addEventListener('click', function(event) {
+        event.preventDefault();
+        var k = event.target.textContent;
+        var val = event.target.getAttribute('href');
+    
+        if (!event.target.getElementsByTagName('a')[0]) {
+            if (event.target.getAttribute('href') !== '#') {
+                localStorage.setItem(k, JSON.stringify({path: val}));
+                event.target.setAttribute('href', '#');
+                alert('Ссылка была сохранена');
+            }else {
+                for (var i = 0; i < localStorage.length; i++) {
+                    if (k === localStorage.key(i)) {
+                        kStorage = localStorage.key(i);
+                        valStorage = JSON.parse(localStorage.getItem(localStorage.key(i))).path;
+                        alert(valStorage);
+                    }
                 }
+                
             }
-            
         }
-    }
-}, false);
-
-
+    }, false);
+}
