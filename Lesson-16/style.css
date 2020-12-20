@@ -25,26 +25,34 @@ body{
 }
 
 .block_content_tabs_item {
+    display: flex;
+    justify-content: center;
     position: absolute;
-    top: -40px;
+    top: -30px;
     left: 0;
-    width: 100px;
-    height: 40px;
+    width: 80px;
+    height: 30px;
     background-color: green;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    line-height: 30px;
+    color: #ffffff;
 }
 
 .block_content_item {
+    display: flex;
+    justify-content: center;
+    text-align: center;
     width: 700px;
     height: 150px;
     background-color: #ffffff;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    color: #ffffff;
 }
 
 .active {
-    color: #ffffff;
+    color: green;
     background-color: #ffffff;
 }

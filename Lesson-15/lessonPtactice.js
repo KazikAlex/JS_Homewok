@@ -32,14 +32,13 @@ function secondParLinkGreen() {
     }
 };
 
-var secondParLinks = secondPar.getElementsByTagName('a');
 
-for(var i = 0; i < secondParLinks.length; i++) {
-    secondParLinks[i].addEventListener('click', function(event) {
-        event.preventDefault();
-        var k = event.target.textContent;
-        var val = event.target.getAttribute('href');
+secondPar.addEventListener('click', function(event) {
+    event.preventDefault();
+    var k = event.target.textContent;
+    var val = event.target.getAttribute('href');
 
+    if (event.target.tagName == 'A') {
         if (event.target.getAttribute('href') !== '#') {
             localStorage.setItem(k, JSON.stringify({path: val}));
             event.target.setAttribute('href', '#');
@@ -54,5 +53,5 @@ for(var i = 0; i < secondParLinks.length; i++) {
             }
             
         }
-    }, false);
-}
+    }
+}, false);

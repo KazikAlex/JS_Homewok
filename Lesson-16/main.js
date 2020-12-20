@@ -1,6 +1,7 @@
-var tabsContainer = document.getElementsByClassName('block_content_tabs')[0];
+var tabsContainer = document.getElementsByClassName('block_content_tabs')[0],
+btn = document.querySelector('.block_btn');
 
-console.log(tabsContainer);
+// console.log(tabsContainer);
 
 var xhr = new XMLHttpRequest();
 
@@ -13,33 +14,50 @@ xhr.onload = function() {
 
 	if (statusType === 2) {
 		try {
-			var prs = JSON.parse(this.response);
+            var prs = JSON.parse(this.response);
+            localStorage.setItem('base', JSON.stringify(prs.data));
 			throw { name: 'Untypical error', message: 'Something went wrong' };
             
 		} catch(error) {
 			console.log(error.name + ' - ' + error.message);
 		}
-        
-		// console.log('After try/catch');
     }
+
+    
     console.log(prs.data);
 
-    if (prs.data.length > 0) {
-        var bias = 0;
-        for (var i = 0; i < prs.data.length; i++) {
-            var divTab = document.createElement('div');
+    var localItem = JSON.parse(localStorage.getItem('base'));
+    console.log(localItem.length);
 
-            if (i = 0) {
-                bias = 0;
-            }else {
-                bias += 110;
-            }
-            
-            divTab.className = 'block_content_tabs_item'
-            divTab.innerHTML = 'User' + i;
-            divTab.style.left = bias + 'px';
-            tabsContainer.appendChild(divTab);
+    if (localItem) {
+        for (var key of localItem) {
+
         }
     }
+
+    btn.addEventListener('click', function() {
+        // console.log(prs.data.length);
+        if (prs.data.length > 0) {
+            var bias = 0;
+            for (var i = 0; i < prs.data.length; i++) {
+                var divTab = document.createElement('div');
+    
+                if (i == 0) {
+                    bias = 0;
+                    divTab.classList.toggle('active');
+                }else {
+                    bias += 90;
+                }
+                
+                divTab.className = 'block_content_tabs_item'
+                divTab.innerHTML = 'User ' + i;
+                divTab.style.left = bias + 'px';
+                tabsContainer.appendChild(divTab);
+                // console.log(divTab.style);
+            }
+        }
+
+    });
+    
 
 };
