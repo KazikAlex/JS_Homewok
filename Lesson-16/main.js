@@ -32,8 +32,6 @@ function loadLocalStorageContent() {
     return localbase;
 }
 
-
-
 if (localStorage.base != null){
     loadLocalStorageContent();
 }
