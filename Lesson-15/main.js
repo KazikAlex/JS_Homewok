@@ -73,8 +73,11 @@ btn.addEventListener('click', function() {
     table.addEventListener('click', function(event) {
         var target = event.target;
         
-        for (var c = 0; c < colTd.length; c++) {
-            colTd[c].classList.toggle('black');
+        if (target.tagName == 'TD') {
+            for (var c = 0; c < colTd.length; c++) {
+                colTd[c].classList.toggle('black');
+            }
         }
+        
     });
 });
