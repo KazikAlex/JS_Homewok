@@ -32,8 +32,6 @@ function loadLocalStorageContent() {
     return localbase;
 }
 
-
-
 if (localStorage.base != null){
     loadLocalStorageContent();
 }
@@ -89,6 +87,4 @@ tabsContainer.addEventListener('click', function(event) {
         event.target.classList.add('active');
         event.target.previousSibling.style.display = 'flex';
     }
-
-   
 });
