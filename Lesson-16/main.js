@@ -87,4 +87,10 @@ tabsContainer.addEventListener('click', function(event) {
         event.target.classList.add('active');
         event.target.previousSibling.style.display = 'flex';
     }
+<<<<<<< HEAD
 });
+=======
+
+   
+});
+>>>>>>> 51219a7f5f6736cc695d5b3d1da0ba14fd29db70
