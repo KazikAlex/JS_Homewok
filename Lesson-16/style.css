@@ -2,6 +2,17 @@ body{
     background-color: #000000;
 }
 
+button {
+    border: none;
+    outline: none;
+}
+
+.img {
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+}
+
 .block {
     position: relative;
     width: 700px;
@@ -9,7 +20,7 @@ body{
     margin: 80px auto;
 }
 
-.block_btn {
+.btn {
     position: absolute;
     width: 100px;
     height: 35px;
@@ -20,57 +31,33 @@ body{
     z-index: 15;
 }
 
-.block_content {
-    position: relative;
-    width: 700px;
-    height: 150px;
+.tabs {
+    width: 550px;
+    height: 35px;
 }
 
-.block_content_container {
-    width: 700px;
-    height: 150px;
-    margin-top: 50px;
-}
-
-.block_content_info {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: start;
-    width: 700px;
-    height: 150px;
-    background-color: #ffffff;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    color: #ffffff;
-}
-
-.info { 
-    margin: 10px;
-    color: blue;
-}
-
-.img {
-    width: 130px;
-    height: 130px;
-    margin: 10px;
-}
-
-.block_content_tab {
-    position: absolute;
+.tab {
+    display: inline-block;
     width: 60px;
-    height: 30px;
-    top: -30px;
-    left: 0;
-    padding-left: 5px;
-    line-height: 30px;
+    height: 35px;
+    margin-right: 10px;
     background-color: green;
-    border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    color: #ffffff;
-    cursor: pointer;
+    border-top-left-radius: 5px;
+    color: #fff;
+}
+
+.show {
+    display: inline-block;
+}
+
+.hide {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center
 }
 
 .active {
@@ -86,4 +73,21 @@ body{
     line-height: 100px;
     color: red;
     background-color: #ffffff;
+}
+
+.info  {
+    width: 700px;
+    height: 158px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #ffffff;
+}
+
+.name {
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+    font-weight: bold;
+    color: blue;
 }

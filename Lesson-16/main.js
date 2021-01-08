@@ -1,33 +1,31 @@
-var blockContent = document.querySelector('.block_content'),
-tabsContainer = document.querySelector('.block'),
-btn = document.querySelector('.block_btn');
+var blockContent = document.querySelector('.content'),
+tabs = document.querySelector('.tabs'),
+infoBlock = document.querySelector('.info-block'),
+btn = document.querySelector('.btn');
 
 function loadLocalStorageContent() {
-    var localbase = JSON.parse(localStorage.base),
-    bias = 0;
+    var localbase = JSON.parse(localStorage.base);
 
     for (var j = 0; j < localbase.length; j++) {
-        var tab = document.createElement('div'),
-        info = document.createElement('div'),
-        divContainer = document.createElement('div');
-        
-        divContainer.classList.add('block_content_container');
-        tab.classList.add('block_content_tab');
-        info.classList.add('block_content_info');
+        var tab = document.createElement('button'),
+        info = document.createElement('div');
+
+        tab.classList.add('tab');
+        info.classList.add('info');
         tab.innerHTML = 'User ' + (j+1);
-        info.innerHTML = '<img class="img" src="' + localbase[j].avatar + '"></img><div class="info">Name: '+ localbase[j].first_name +'<br>Last name: '+ localbase[j].last_name + '</div>'
+        info.innerHTML = '<img class="img" src="' + localbase[j].avatar + '"></img><div class="name">Name: '+ localbase[j].first_name +'<br>Last name: '+ localbase[j].last_name + '</div>'
 
         if (j == 0) {
             tab.classList.add('active');
+            info.classList.add('flex');
         }else {
-            bias += 80;
-            info.style.display = 'none';
-            tab.style.left = bias + 'px';
+            info.classList.add('hide');
+            
         }
 
-        divContainer.appendChild(info);
-        divContainer.appendChild(tab);
-        blockContent.appendChild(divContainer);
+        tabs.appendChild(tab);
+        infoBlock.appendChild(info);
+        
     }
     return localbase;
 }
@@ -38,59 +36,58 @@ if (localStorage.base != null){
 
 btn.addEventListener('click', function() {
     var xhr = new XMLHttpRequest();
-
+    
     xhr.open('GET', 'https://reqres.in/api/users?page', true);
     xhr.send();
 
     xhr.onload = function() {
-        var statusType = +String(this.status)[0],
-        tabs = document.getElementsByClassName('block_content_container');
-
+        var statusType = +String(this.status)[0];
+        
         if (statusType === 2) {
             try {
                 var prs = JSON.parse(this.response);
-
-                 throw { name: 'Не типичнаяя ошибка', message: 'Чо то пошло не так' };
+                // var prs = JSON.parse('Создаем какую то не понятную  ошибку');
+                
             } catch(error) {
                 var divError =  document.createElement('div');
 
                 blockContent.innerHTML = '';
                 localStorage.clear();
                 divError.classList.add('error');
-                divError.textContent = error.name + ' - ' + error.message;
+                divError.textContent = 'а вот и выползла ошибка!';
                 blockContent.appendChild(divError);
             }
         }
 
         localStorage.setItem('base', JSON.stringify(prs.data));
 
-        if (tabs) {
-            blockContent.innerHTML = '';
+        var tabContainer = document.querySelectorAll('.tab');
+
+        if (tabContainer) {
+            tabs.innerHTML = '';
+            infoBlock.innerHTML = '';
         }
 
         loadLocalStorageContent();
     }
 });
 
-tabsContainer.addEventListener('click', function(event) {
-    var tabs = document.getElementsByClassName('block_content_tab'),
-    info = document.getElementsByClassName('block_content_info');
 
-    if (event.target.className === 'block_content_tab') {
-        for (var key of tabs) {
-            key.classList.remove('active');
+tabs.addEventListener('click', function(event) {
+    var tab = document.getElementsByClassName('tab'),
+    infoContainer = document.getElementsByClassName('info');
+    if (event.target.classList == 'tab' ) {
+        for (var i = 0; i < tab.length; i++) {
+            if (event.target == tab[i]) {
+                tab[i].classList.add('active');
+                infoContainer[i].classList.remove('hide');
+                infoContainer[i].classList.add('flex');
+            }
+            else {
+                infoContainer[i].classList.add('hide');
+                infoContainer[i].classList.remove('flex');
+                tab[i].classList.remove('active');
+            }
         }
-        for (var k of info) {
-            k.style.display = 'none';
-        }
-    
-        event.target.classList.add('active');
-        event.target.previousSibling.style.display = 'flex';
     }
-<<<<<<< HEAD
 });
-=======
-
-   
-});
->>>>>>> 51219a7f5f6736cc695d5b3d1da0ba14fd29db70
